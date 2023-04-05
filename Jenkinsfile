@@ -21,7 +21,7 @@ pipeline {
                 echo 'Testing..'
                 sh 'docker stop $CONTAINER_NAME || true'
                 sh 'docker rm $CONTAINER_NAME || true'
-                sh 'docker run --name $CONTAINER_NAME $CONTAINER_NAME /bin/bash -c "pytest test.py && flake8"'
+                sh 'docker run -p 5000:5000 --name $CONTAINER_NAME $CONTAINER_NAME /bin/bash -c "pytest test.py && flake8"'
             }
         }
         // stage('Push') {

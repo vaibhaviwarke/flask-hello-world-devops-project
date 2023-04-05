@@ -8,6 +8,9 @@ app = Flask(__name__)
 def hello():
     return "Hello world!!!"
 
+@app.route("/sum")
+def hello():
+    return 10+20
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
